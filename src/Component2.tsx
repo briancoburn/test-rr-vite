@@ -4,7 +4,7 @@ import store from './utils/store.ts';
 import {COUNT_UPDATE, type EventData} from './utils/events.ts';
 
 function Component2() {
-  const [update, setUpdate] = useState(Date.now())
+  const [update, setUpdate] = useState(0)
   const [updatedBy, setUpdatedBy] = useState('')
   const [incDecAmount, setIncDecAmount] = useState('1')
   const onEvent = (name:string, data:EventData)=>{
@@ -33,5 +33,4 @@ function Component2() {
     </section>
   )
 }
-
 export default Component2

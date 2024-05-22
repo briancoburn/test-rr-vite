@@ -4,7 +4,7 @@ import store from './utils/store.ts';
 import {COUNT_UPDATE} from './utils/events.ts';
 
 function Component1() {
-  const [update, setUpdate] = useState(Date.now())
+  const [update, setUpdate] = useState(0)
   const [incDecAmount, setIncDecAmount] = useState('1')
   const onEvent = (name:string)=>{
     switch(name){
@@ -18,7 +18,6 @@ function Component1() {
     store.count = store.count += parseInt(incDecAmount)
     rr.next(COUNT_UPDATE, {updatedBy:'Component1'})
   }
-  console.log('Component1::render()')
   return (
     <section data-rr-timestamp={update} className='component'>
       <span>Component1:</span>
@@ -31,5 +30,4 @@ function Component1() {
     </section>
   )
 }
-
 export default Component1
